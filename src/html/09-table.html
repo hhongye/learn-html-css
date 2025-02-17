@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table 관련 요소</title>
+  </head>
+  <body>
+    <!-- 테이블 관련 요소 -->
+    <!-- css 맛보기(표 심플해짐) -->
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid currentColor;
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+    </style>
+    <table>
+      <caption>
+        멋쟁이 사자처럼 프론트엔드 스쿨 13기 스탭
+      </caption>
+      <colgroup>
+        <col />
+        <col span="2" />
+        <col />
+      </colgroup>
+      <!-- 행3개 열4개 테이블 -->
+      <!-- th로 제목행 -->
+      <thead>
+        <tr>
+          <th scope="col">번호</th>
+          <th scope="col">강사</th>
+          <th scope="col">멘토</th>
+          <th scope="col">운영진</th>
+        </tr>
+      </thead>
+      <!-- 바닥글 행 -->
+      <!-- 맨아래로 제자리 찾아감 -->
+      <tfoot>
+        <tr>
+          <td scope="row">인원수</td>
+          <td>2명</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+      </tfoot>
+      <!-- 두 행을 묶어줌 -->
+      <tbody>
+        <tr>
+          <td scope="row">1</td>
+          <td>슬비쌤</td>
+          <td>유진혁</td>
+          <td>정재인</td>
+        </tr>
+        <tr>
+          <td scope="row">2</td>
+          <td>용쌤</td>
+          <td>권석기</td>
+          <td>금윤호</td>
+        </tr>
+        <!-- 2칸씩 병합 -->
+        <tr>
+          <td colspan="2" rowspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>테이블 예제</h2>
+    <table>
+      <tr>
+        <th>학습시간</th>
+        <td>09:00~17:00 (28시간)</td>
+      </tr>
+      <tr>
+        <th>교육비 지원</th>
+        <td>고용보험 지환급</td>
+      </tr>
+      <tr>
+        <th>수료기준</th>
+        <td>총점 80점 이상시 수료</td>
+      </tr>
+      <tr>
+        <th>교재정보</th>
+        <td>
+          입문자를 위한 GIT과 HTML&CSS <br />
+          HTML&CSS 웹사이트 개발과 디자인 기초
+        </td>
+      </tr>
+      </tr>
+    </table>
+  </body>
+</html>

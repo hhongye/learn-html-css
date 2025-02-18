@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iframe, object 요소</title>
+  </head>
+  <body>
+    <!-- ifram을 활용하여 비디오 삽입하기 -->
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/nj6zg9cV8K4?si=jKhcxgt7dNjVkq9_"
+      title="웹 접근성을 고려한 HTML 마크업1 - A0A11Y Youtube"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+    <hr />
+    <figure>
+      <object
+        type="application/pdf"
+        data="/src/assets/pdf/wai-aria.pdf"
+        width="600"
+        height="430"
+      ></object>
+      <figcaption>WAI-ARIA</figcaption>
+    </figure>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>picture, source 요소</title>
+  </head>
+  <body>
+    <!-- srcset, sizes 속성 -->
+    <img
+      srcset="
+        /src/assets/logo/netflix@1x.png 1x,
+        /src/assets/logo/netflix@2x.png 2x
+      "
+      src="/src/assets/logo/netflix@1x.png"
+      alt="넷플릭스"
+    />
+    <!-- 1이 나옴 -->
+    <br />
+    <!-- 이미지 형식 -->
+    <img
+      src="/src/assets/logo/netflix@1x.png"
+      srcset="
+        /src/assets/logo/netflix@1x.webp 1x,
+        /src/assets/logo/netflix@2x.webp 2x
+      "
+      alt="넷플릭스"
+    />
+    <br />
+    <h2>W Descriptor 예시</h2>
+    <picture>
+      <source
+        srcset="/src/assets/rwd/small-550.jpg 550w"
+        midia="(max-width: 768px)"
+      />
+      <source
+        srcset="/src/assets/rwd/medium-1024.jpg 1024w"
+        media="(max-width: 1024w)"
+      />
+      <img src="/src/assets/rwd/small-550.jpg" alt="" />
+    </picture>
+  </body>
+</html>

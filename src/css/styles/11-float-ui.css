@@ -1,0 +1,69 @@
+/* 굿 파트너 추가 예제 */
+@import '/src/common/modern-reset.css';
+
+body {
+  font-family: SUIT, sans-serif;
+}
+
+.card {
+  /* BFC - overflow:hidden, display:flow-root, float-left, position: absolute */
+  /* display: flow-root; 이미지가 배경상자 밖으로 안나감/ hidden(엄친아)인게 나타남 */
+  /* background: pink; */
+  margin: 2em; /*배경 상자 밖 여백은 margin 사용, 16*2=32px*/
+  padding: 2em; /* 배경 상자 안 여백 16*2=32px**/
+  border: 1px solid #aaa;
+  border-radius: 0.5rem; /*8px*/
+
+  &.good-partner {
+    display: flow-root;
+  }
+
+  /* 제목 */
+  .subject {
+    /* background: skyblue; */
+    font-size: 1.5rem; /*16*1.5*/
+    font-weight: 600; /*굵은 글꼴*/
+    /* vertical-align: top; */
+
+    span {
+      vertical-align: top;
+      /* font-size: 0.5em; 영문 글자 작게 */
+    }
+    span {
+      vertical-align: top;
+
+      &[lang='en'] {
+        font-size: 0.5em;
+        position: relative; /* 글자 이동 가능해짐 */
+        top: 2px; /* 영문 내려옴 */
+      }
+    }
+  }
+
+  /* 이미지 */
+  .thumbnail {
+    --radius: 50%;
+
+    border: 1px solid #ccc;
+    float: left; /*썸네일이 떠있는것*/
+    margin: 1em;
+    padding: 0.625em;
+    border-radius: var(--radius);
+    width: 120px;
+    height: auto;
+    shape-outside: circle(50%); /* 글자가 원을 따라서 보임 */
+
+    img {
+      width: 100%;
+      aspect-ratio: 1/1; /*가로 세로 크기 1:1*/
+      border-radius: var(--radius); /*부모꺼 상속 받아서 자동 수정하기*/
+      object-fit: cover; /* 콘텐츠 크기 조절*/
+      object-position: 0 -20px;
+    }
+  }
+}
+
+/* 내용 */
+.content {
+  margin-top: 0.625rem;
+}

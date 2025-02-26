@@ -1,0 +1,30 @@
+@import url(/src/common/best-reset.css);
+@import url(/src/common/a11y.css);
+
+/* 모든 디바이스에 기본적으로 적용될 배경색 - blue */
+/* 모든 디바이스에 글자 크기를 유연하게 설정 - vw 단위 */
+body {
+  background: yellow;
+  font-size: clamp(
+    0.75rem,
+    2vw,
+    2rem
+  ); /* 화면 커지면 32px(2rem)로 글자 크기 고정*/
+
+  /* 뷰포트(600px) 크기에 따라 적용될 배경색 - pink*/
+  @media (min-width: 600px) and (max-width: 800px) {
+    background: pink; /* 600px크기 넘어가면 핑크색 */
+  }
+
+  /* 뷰포트(1000px) 크기에 따라 적용될 배경색 - pink*/
+  @media (min-width: 1000px) {
+    background: lime; /* 600px크기 넘어가면 핑크색 */
+  }
+}
+
+/* 가로 보기모드에서 적용될 배경색 - orange */
+/* @media (orientation: landscape){
+  body{
+    background-color: orange;
+  }
+} */

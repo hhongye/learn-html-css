@@ -1,0 +1,75 @@
+@import '/src/common/best-reset.css';
+@import '/src/common/theme.css';
+@import '/src/ui/components/avatar/avatar.css';
+
+body {
+  margin: 50px;
+}
+
+h1 {
+  margin-block: 20px; /*마진 겹침, h1이 노멀 플로우라서 */
+}
+
+/* Stacking context */
+/* case 1 */
+.case-01 {
+  background: yellow;
+  display: flex; /* 사진 틈이 없어짐 */
+  flex-flow: row nowrap;
+
+  .button-avatar {
+    margin-right: -20px; /*사진 마다 오른쪽에 마진, 박스 크기 84px됨*/
+    position: static;
+    transition: rotate 2000ms; /* 회전함 */
+    /*filter: blur(5px); */
+
+    &:hover, /*마우스 올렸을 때*/
+    &:focus {
+      /*클릭했을때*/
+      z-index: 10;
+      /* 아바타의 겹치는 순서 제어하기 위해 0보다 큰 값 지정 */
+      /* position이 ststic이 아닐 경우 가능(z-index) */
+      transform: scale(1.5) translate(0, -20px); /* 변형 - 이동, 회전, 크기 키우기, 찌그러뜨리기,예전방식 */
+      /*opacity: 0.8; /* 투명도 ?*/
+      /*transform: translate(0, -20px); /*움직일때(올라가거나 내려감) 사진이 올라옴 */
+      /*translate: 0, -20px;*/ /*현재 방식*/
+      rotate: 3turn; /*사진 회전 -> transition: rotate 3s; 부모에 지정해야함*/
+      filter: sepia(60%);
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+/*Transition */
+/* case 2 */
+.case-02 {
+  margin-block-start: 20px;
+  display: flex;
+  gap: 20px;
+
+  [class^='area'] {
+    inline-size: 100px;
+    block-size: 100px;
+    border: 1px solid currentColor;
+    text-align: center;
+    align-content: center;
+    background: var(--pastel-lavender);
+    transition-property: background, border-radius;
+    transition-duration: 0.5s, 0.5s; /*property와 같이 사용. 천천히 색 변함*/
+    transition-delay: 0s, 0.5s;
+    transition-timing-function: ease;
+    /* transition 관련 단축 속성 */
+    /* transition: background 2s 0s ease, border-radius 1s 2s ease; */
+    transition: all 100ms; /* -> rotate */
+
+    &:hover {
+      /* 마우스 올렸을때 변화 */
+      background: var(--pastel-orange);
+      border-radius: 50%; /*동그라미로 만들기*/
+      rotate: 2turn;
+    }
+  }
+}

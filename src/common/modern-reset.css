@@ -36,9 +36,9 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
+  min-height: 100vh; /*body의 최소 높이 설정 */
   text-rendering: optimizeSpeed;
-  line-height: 1.15;
+  line-height: 1.15; /*1.15배 설정*/
 }
 
 /* A elements that don't have a class get default styles */
@@ -49,8 +49,8 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
-  display: block;
+  max-width: 100%; /*이미지 원본 크기 이상 커지지 마라*/
+  display: block; /*block으로 */
 }
 
 /* iframe, video 요소의 기본 스타일 */

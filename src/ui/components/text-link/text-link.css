@@ -1,0 +1,22 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/login-theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/b  ase.css';
+
+/* 텍스트 링크 컴포넌트 */
+.text-link {
+  /*background: yellow; 인라인임 그리고 한줄로 나타남*/
+  display: inline-flex; /*공백 문자 생김. 인라인블록보다 유연한 크기*/
+  font-size: var(--font-md); /*14px*/
+
+  &:hover {
+    background: var(--blue-100);
+  }
+
+  &:focus {
+    /* outline: 1px solid red; */
+    outline: 0;
+    box-shadow: 0 0 0 1px var(--blue-900);
+    border-radius: var(--rounded-xs);
+  }
+}

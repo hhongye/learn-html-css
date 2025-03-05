@@ -12,6 +12,7 @@
   --fill-color: var(--gray-900, #454545);
 
   display: inline-flex; /*나중에 제어 가능*/
+  justify-content: center;
   border: 1px solid currentColor;
   padding: var(--spacing);
   color: var(--text-color);

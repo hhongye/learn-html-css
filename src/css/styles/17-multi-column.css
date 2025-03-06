@@ -1,0 +1,64 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import 'src/common/a11y.css';
+@import '/src/common/base.css';
+
+.container{
+  background: var(--pastel-lavender);
+  padding: 1em;
+
+  .case{
+    /* border: 1px solid red; */
+    margin-block: 20px; /*margin top & bottom*/
+  }
+
+  /* case-1 column-width */
+  .case-01{
+    column-width: 15rem;
+    column-rule: 1px solid red; 
+    column-gap: 2rem;
+  }
+
+  .case-02{
+    column-count: 4;
+    column-rule: 3px double blue;
+
+    /*column-span : all을 지정하기 위해서는 블록 요소여야만 함*/
+    span{
+      display: block; /*전체 영역 차지*/
+      column-span: all;
+      background: var(--pastel-dark-blue);
+      color: var(--white);
+      padding: 0.5em;
+    }
+  }
+
+    /* case : colums 단축 속성에 column-width 선언 */
+  .case-03{
+    columns: 5rem; /*단위없으면 count로 나타남*/
+    column-rule: 1px dotted green; /*점선*/
+    column-fill: balance;
+  }
+
+  .case-04{
+    column-fill: balance;
+    columns: 2;
+  }
+
+  .case-05{
+    column-fill: auto;
+    columns: 2;
+    height: 100px;
+    block-size: 100px;
+  }
+}
+
+.wrapper{
+  background: var(--pastel-apricot);
+  padding: 1em;
+  columns: 4; /*4단*/
+
+  .case-02{
+    break-after: always;
+  }
+}
